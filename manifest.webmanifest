@@ -1,0 +1,13 @@
+{
+  "name": "Matheus Pereira Barbearia",
+  "short_name": "MP Barbearia",
+  "description": "Barbearia em Araraquara - cortes masculinos, barba e estilos personalizados.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#E7DBC4",
+  "theme_color": "#1B1914",
+  "lang": "pt-BR",
+  "icons": [
+    { "src": "assets/brand/favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ]
+}

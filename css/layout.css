@@ -1,0 +1,376 @@
+/* ==========================================================================
+   Estruturas compartilhadas: container, cabecalho, botoes, molduras, rodape
+   ========================================================================== */
+
+.container {
+  width: 100%;
+  max-width: var(--largura);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+.secao { padding-block: var(--secao-y); }
+
+.secao--escura {
+  background: var(--grafite);
+  color: var(--areia-alta);
+}
+.secao--escura .prosa { color: #C8BFAF; }
+
+.secao--recuo { background: var(--areia-baixa); }
+
+/* --------------------------------------------------------------------------
+   Moldura de traco fino
+   O motivo estrutural do site. A fachada e uma vitrine dividida por montantes
+   finos e o teto do salao tem luminarias LED em retangulos de traco fino --
+   as molduras abaixo sao a traducao disso, nao decoracao aplicada por cima.
+   -------------------------------------------------------------------------- */
+.moldura {
+  position: relative;
+  isolation: isolate;
+}
+
+.moldura > img {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 2px;
+}
+
+/* retangulo deslocado atras da foto: a luminaria */
+.moldura::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  translate: var(--moldura-x, 1.25rem) var(--moldura-y, 1.25rem);
+  border: 1px solid var(--linha);
+  border-radius: 2px;
+  z-index: 0;
+}
+
+.secao--escura .moldura::before { border-color: var(--linha-clara); }
+
+.moldura--esquerda { --moldura-x: -1.25rem; }
+
+/* --------------------------------------------------------------------------
+   Botoes
+   -------------------------------------------------------------------------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .625rem;
+  font-family: var(--display);
+  font-size: .8125rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: .14em;
+  text-decoration: none;
+  padding: 1.0625rem 1.875rem;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  transition: background-color .35s var(--ease), color .35s var(--ease),
+              border-color .35s var(--ease);
+}
+
+.btn svg { width: 1.0625rem; height: 1.0625rem; flex: none; }
+
+.btn--principal {
+  background: var(--grafite);
+  color: var(--areia-alta);
+}
+.btn--principal:hover { background: var(--couro); }
+
+.btn--contorno {
+  border-color: #1B191440;
+  color: var(--tinta);
+}
+.btn--contorno:hover {
+  border-color: var(--grafite);
+  background: #1B19140A;
+}
+
+.btn--claro {
+  background: var(--areia-alta);
+  color: var(--grafite);
+}
+.btn--claro:hover { background: var(--carvalho); }
+
+.btn--contorno-claro {
+  border-color: #E7DBC44D;
+  color: var(--areia-alta);
+}
+.btn--contorno-claro:hover {
+  border-color: var(--areia-alta);
+  background: #E7DBC414;
+}
+
+.btn--largo { width: 100%; }
+
+/* Link de texto com sublinhado -- unica microinteracao de link */
+.link-linha {
+  display: inline-block;
+  font-family: var(--display);
+  font-size: .8125rem;
+  text-transform: uppercase;
+  letter-spacing: .14em;
+  text-decoration: none;
+  padding-bottom: .3rem;
+  border-bottom: 1px solid currentColor;
+  transition: opacity .3s var(--ease);
+}
+.link-linha:hover { opacity: .6; }
+
+/* --------------------------------------------------------------------------
+   Cabecalho de secao
+   Titulo grande em caixa alta, herdado do letreiro. Sem etiqueta miuda acima.
+   -------------------------------------------------------------------------- */
+.cabecalho-secao { margin-bottom: clamp(2.5rem, 5vw, 4rem); }
+
+.cabecalho-secao h2 {
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-titulo);
+  max-width: 20ch;
+}
+
+.cabecalho-secao .prosa { margin-top: 1.5rem; }
+
+/* --------------------------------------------------------------------------
+   Cabecalho fixo
+   -------------------------------------------------------------------------- */
+.topo {
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: 100;
+  border-bottom: 1px solid transparent;
+  transition: background-color .4s var(--ease), border-color .4s var(--ease);
+}
+
+.topo.is-fixo {
+  background: #E7DBC4F2;
+  backdrop-filter: blur(10px);
+  border-bottom-color: var(--linha);
+}
+
+.topo__interno {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  min-height: 78px;
+}
+
+.topo__marca {
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+  text-decoration: none;
+  color: var(--grafite);
+}
+
+.topo__marca svg { width: 26px; height: auto; }
+
+.topo__marca-nome {
+  font-family: var(--display);
+  font-size: .6875rem;
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-marca);
+  line-height: 1.35;
+}
+.topo__marca-nome span { display: block; opacity: .62; }
+
+.topo__nav { display: flex; align-items: center; gap: 2rem; }
+
+.topo__nav a {
+  font-family: var(--display);
+  font-size: .75rem;
+  text-transform: uppercase;
+  letter-spacing: .13em;
+  text-decoration: none;
+  padding-block: .3rem;
+  border-bottom: 1px solid transparent;
+  transition: border-color .3s var(--ease);
+}
+.topo__nav a:hover { border-bottom-color: currentColor; }
+
+.topo .btn { padding: .875rem 1.4rem; }
+
+/* Botao do menu mobile */
+.topo__menu {
+  display: none;
+  width: 44px;
+  height: 44px;
+  align-items: center;
+  justify-content: center;
+  margin-right: -.6rem;
+}
+.topo__menu span {
+  display: block;
+  width: 22px;
+  height: 1px;
+  background: var(--grafite);
+  position: relative;
+  transition: background-color .2s var(--ease);
+}
+.topo__menu span::before,
+.topo__menu span::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 22px;
+  height: 1px;
+  background: var(--grafite);
+  transition: translate .3s var(--ease), rotate .3s var(--ease);
+}
+.topo__menu span::before { translate: 0 -6px; }
+.topo__menu span::after  { translate: 0 6px; }
+
+.topo__menu[aria-expanded="true"] span { background: transparent; }
+.topo__menu[aria-expanded="true"] span::before { translate: 0 0; rotate: 45deg; }
+.topo__menu[aria-expanded="true"] span::after  { translate: 0 0; rotate: -45deg; }
+
+/* --------------------------------------------------------------------------
+   Rodape
+   -------------------------------------------------------------------------- */
+.rodape {
+  background: var(--grafite);
+  color: #B9B0A2;
+  padding-block: clamp(3.5rem, 7vw, 5.5rem) 2rem;
+}
+
+.rodape a { text-decoration: none; }
+.rodape a:hover { color: var(--areia-alta); }
+
+.rodape__grade {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr;
+  gap: clamp(2rem, 5vw, 4rem);
+  padding-bottom: 3rem;
+  border-bottom: 1px solid var(--linha-clara);
+}
+
+.rodape__marca svg {
+  width: 40px;
+  color: var(--areia-alta);
+  margin-bottom: 1.25rem;
+}
+
+.rodape__nome {
+  font-family: var(--display);
+  font-size: .8125rem;
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-marca);
+  color: var(--areia-alta);
+  line-height: 1.6;
+}
+
+.rodape h3 {
+  font-size: .75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: .14em;
+  color: var(--areia-alta);
+  margin-bottom: 1.1rem;
+}
+
+.rodape li + li { margin-top: .6rem; }
+.rodape li { font-size: .9375rem; }
+
+.rodape__base {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-top: 2rem;
+  font-size: .8125rem;
+  color: #8C8478;
+}
+
+/* --------------------------------------------------------------------------
+   Barra fixa de agendamento (mobile)
+   O caminho para marcar horario nunca precisa ser procurado.
+   -------------------------------------------------------------------------- */
+.barra-agendar {
+  position: fixed;
+  inset: auto 0 0;
+  z-index: 90;
+  display: none;
+  gap: .625rem;
+  padding: .625rem var(--gutter) calc(.625rem + env(safe-area-inset-bottom));
+  background: #E7DBC4F5;
+  backdrop-filter: blur(10px);
+  border-top: 1px solid var(--linha);
+}
+.barra-agendar .btn { flex: 1; padding-block: .9375rem; }
+.barra-agendar .btn--contorno { flex: 0 0 auto; padding-inline: 1.1rem; }
+
+/* --------------------------------------------------------------------------
+   Aviso de conteudo provisorio
+   Fica visivel enquanto a galeria usa fotos de banco, para que ninguem tome
+   essas imagens por trabalho do Matheus. Some quando MODO_PROTOTIPO = false.
+   -------------------------------------------------------------------------- */
+.aviso-provisorio {
+  display: flex;
+  align-items: flex-start;
+  gap: .625rem;
+  margin-top: 1.5rem;
+  padding: .75rem 1rem;
+  border-left: 2px solid var(--couro);
+  background: #5A3A2E0F;
+  font-size: .875rem;
+  line-height: 1.5;
+  color: #5F5342;
+  max-width: 58ch;
+}
+.secao--escura .aviso-provisorio {
+  background: #E7DBC40F;
+  border-left-color: var(--carvalho);
+  color: #C0B7A7;
+}
+
+/* --------------------------------------------------------------------------
+   Responsivo -- estruturas compartilhadas
+   -------------------------------------------------------------------------- */
+@media (max-width: 960px) {
+  .rodape__grade { grid-template-columns: 1fr 1fr; }
+  .rodape__marca { grid-column: 1 / -1; }
+}
+
+@media (max-width: 860px) {
+  .topo__menu { display: flex; }
+  .topo .btn--principal { display: none; }
+
+  /* Menu em tela cheia */
+  .topo__nav {
+    position: fixed;
+    inset: 0;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0;
+    background: var(--areia);
+    padding: 5rem var(--gutter) 2rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .35s var(--ease), visibility .35s var(--ease);
+  }
+  .topo__nav.is-aberto { opacity: 1; visibility: visible; }
+
+  .topo__nav a {
+    font-size: 1.5rem;
+    letter-spacing: .08em;
+    padding-block: 1rem;
+    border-bottom: 1px solid var(--linha);
+    width: 100%;
+  }
+  .topo__nav a:first-child { border-top: 1px solid var(--linha); }
+
+  .barra-agendar { display: flex; }
+  body { padding-bottom: 4.75rem; }
+}
+
+@media (max-width: 560px) {
+  .rodape__grade { grid-template-columns: 1fr; }
+  .moldura::before { --moldura-x: .75rem; --moldura-y: .75rem; }
+  .moldura--esquerda { --moldura-x: -.75rem; }
+}

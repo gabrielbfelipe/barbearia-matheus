@@ -1,0 +1,145 @@
+/* ==========================================================================
+   Movimento
+   Toda a ousadia do projeto esta concentrada no monograma. O resto fica
+   quieto: sem entrada animada em cada secao, sem elevacao em cada card,
+   sem cursor customizado.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Abertura: o monograma se desenha e assenta no cabecalho
+   Roda uma vez por sessao.
+   -------------------------------------------------------------------------- */
+.abertura {
+  position: fixed;
+  inset: 0;
+  z-index: 300;
+  display: grid;
+  place-items: center;
+  background: var(--areia);
+}
+
+.abertura[hidden] { display: none; }
+
+.abertura__marca {
+  width: clamp(5rem, 14vw, 8rem);
+  color: var(--grafite);
+}
+
+.abertura__marca .mp-traco {
+  stroke-dasharray: var(--comprimento);
+  stroke-dashoffset: var(--comprimento);
+}
+
+/* Estado de repouso enquanto a sequencia nao comeca: nada visivel piscando */
+html.js .abertura__marca .mp-traco { stroke-dashoffset: var(--comprimento); }
+
+html.abrindo .abertura__marca .mp-traco:nth-child(1) {
+  animation: tracar .62s var(--ease) .1s forwards;
+}
+html.abrindo .abertura__marca .mp-traco:nth-child(2) {
+  animation: tracar .62s var(--ease) .26s forwards;
+}
+
+html.abrindo .abertura {
+  animation: sair-abertura .5s var(--ease) 1.02s forwards;
+}
+html.abrindo .abertura__marca {
+  animation: assentar .5s var(--ease) 1.02s forwards;
+}
+
+@keyframes tracar {
+  to { stroke-dashoffset: 0; }
+}
+
+@keyframes assentar {
+  to {
+    scale: .18;
+    translate: calc(-50vw + 2.9rem + var(--gutter)) calc(-50vh + 2.45rem);
+    opacity: 0;
+  }
+}
+
+@keyframes sair-abertura {
+  to { opacity: 0; visibility: hidden; }
+}
+
+/* O logo do cabecalho entra quando a abertura termina */
+html.abrindo .topo__marca svg { opacity: 0; }
+html.abertura-pronta .topo__marca svg { animation: surgir .45s var(--ease) forwards; }
+
+@keyframes surgir {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* --------------------------------------------------------------------------
+   Revelacao no scroll
+   Apenas onde ha troca real de contexto -- nao em toda secao.
+   -------------------------------------------------------------------------- */
+/* Sem JS a classe `js` nunca e aplicada e o conteudo aparece normalmente --
+   nenhuma secao pode depender de script para existir. */
+html.js .revelar {
+  opacity: 0;
+  translate: 0 1.5rem;
+  transition: opacity .8s var(--ease), translate .8s var(--ease);
+}
+html.js .revelar.is-visivel {
+  opacity: 1;
+  translate: 0 0;
+}
+
+/* --------------------------------------------------------------------------
+   Monograma: a troca de palavras conduzida pelo scroll
+   -------------------------------------------------------------------------- */
+.monograma__palavra {
+  opacity: 0;
+  translate: 0 .75rem;
+  transition: opacity .55s var(--ease), translate .55s var(--ease);
+}
+.monograma__palavra.is-ativa {
+  opacity: 1;
+  translate: 0 0;
+}
+
+.monograma__marca .mp-traco {
+  stroke-dasharray: var(--comprimento);
+  stroke-dashoffset: var(--comprimento);
+  transition: stroke-dashoffset 1.4s var(--ease);
+}
+.monograma.is-visivel .mp-traco { stroke-dashoffset: 0; }
+
+/* --------------------------------------------------------------------------
+   Galeria: troca de filtro
+   Movimento que responde a uma acao da pessoa -- esse pode existir.
+   -------------------------------------------------------------------------- */
+.galeria__item {
+  transition: opacity .4s var(--ease);
+}
+.galeria__grade.is-trocando .galeria__item { opacity: .25; }
+
+/* --------------------------------------------------------------------------
+   Respeitar quem pediu menos movimento
+   -------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: .001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .001ms !important;
+  }
+
+  /* O monograma aparece pronto, sem sequencia e sem piscar. */
+  .abertura { display: none; }
+
+  .abertura__marca .mp-traco,
+  .monograma__marca .mp-traco {
+    stroke-dashoffset: 0;
+  }
+
+  .revelar { opacity: 1; translate: none; }
+  .monograma__palavra.is-ativa { opacity: 1; translate: none; }
+  .topo__marca svg { opacity: 1; }
+}

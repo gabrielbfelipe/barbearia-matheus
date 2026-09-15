@@ -1,0 +1,407 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Matheus Pereira Barbearia | Barbearia em Araraquara - SP</title>
+<meta name="description" content="Barbearia em Araraquara especializada em cortes masculinos, barba e estilos personalizados. Conheça a Matheus Pereira Barbearia e agende seu horário.">
+<link rel="canonical" href="https://matheuspereira-barbearia.vercel.app/">
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:url" content="https://matheuspereira-barbearia.vercel.app/">
+<meta property="og:site_name" content="Matheus Pereira Barbearia">
+<meta property="og:title" content="Matheus Pereira Barbearia | Barbearia em Araraquara - SP">
+<meta property="og:description" content="Cortes masculinos, barba e estilos personalizados em Araraquara. Agende seu horário.">
+<meta property="og:image" content="https://matheuspereira-barbearia.vercel.app/assets/fotos/fachada-hero-735.webp">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#E7DBC4">
+
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="assets/brand/favicon.svg" type="image/svg+xml">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="image" href="assets/fotos/fachada-hero-735.webp">
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/layout.css">
+<link rel="stylesheet" href="css/sections.css">
+<link rel="stylesheet" href="css/motion.css">
+</head>
+
+<body>
+<a class="pular-para-conteudo" href="#conteudo">Pular para o conteúdo</a>
+
+<!-- Abertura: o monograma se desenha e assenta no cabecalho. Uma vez por sessao. -->
+<div class="abertura" id="abertura" aria-hidden="true" hidden>
+  <svg class="abertura__marca" viewBox="-4 -4 108 128" fill="none" stroke="currentColor"
+       stroke-width="4.6" stroke-linecap="round" stroke-linejoin="round">
+    <path class="mp-traco" d="M 2 79.7 L 2 1 L 79.6 118"/>
+    <path class="mp-traco" d="M 10.2 118 L 61.15 19 A 19 19 0 1 1 84 44 L 62 46"/>
+  </svg>
+</div>
+
+<!-- ====================================================================== -->
+<!-- CABECALHO                                                              -->
+<!-- ====================================================================== -->
+<header class="topo" id="topo">
+  <div class="container topo__interno">
+    <a class="topo__marca" href="#" aria-label="Matheus Pereira Barbearia, início">
+      <svg viewBox="-4 -4 108 128" fill="none" stroke="currentColor" stroke-width="4.6"
+           stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M 2 79.7 L 2 1 L 79.6 118"/>
+        <path d="M 10.2 118 L 61.15 19 A 19 19 0 1 1 84 44 L 62 46"/>
+      </svg>
+      <span class="topo__marca-nome">Matheus Pereira<span>Barbearia</span></span>
+    </a>
+
+    <nav class="topo__nav" id="nav" aria-label="Navegação principal">
+      <a href="#barbearia">A barbearia</a>
+      <a href="#servicos">Serviços</a>
+      <a href="#galeria">Galeria</a>
+      <a href="#barbeiro">Sobre</a>
+      <a href="#local">Localização</a>
+    </nav>
+
+    <a class="btn btn--principal" data-whatsapp href="#">Agendar</a>
+
+    <button class="topo__menu" id="btn-menu" type="button"
+            aria-expanded="false" aria-controls="nav" aria-label="Abrir menu">
+      <span></span>
+    </button>
+  </div>
+</header>
+
+<main id="conteudo">
+
+  <!-- ==================================================================== -->
+  <!-- 01 HERO                                                              -->
+  <!-- ==================================================================== -->
+  <section class="hero">
+    <div class="container hero__grade">
+      <div class="hero__texto">
+        <p class="hero__marca">Matheus Pereira<span>Barbearia</span></p>
+
+        <h1>Seu estilo.<br>Do seu jeito.</h1>
+
+        <p class="prosa hero__prosa">
+          Cortes masculinos com atendimento personalizado, em um espaço pensado
+          para que alguns minutos do seu dia valham a pena.
+        </p>
+
+        <div class="hero__acoes">
+          <a class="btn btn--principal" data-whatsapp href="#">Agendar horário</a>
+          <a class="btn btn--contorno" href="#barbearia">Conhecer a barbearia</a>
+        </div>
+
+        <p class="hero__endereco" data-endereco-hero></p>
+      </div>
+
+      <figure class="moldura hero__figura">
+        <img src="assets/fotos/fachada-hero-735.webp"
+             srcset="assets/fotos/fachada-hero-480.webp 480w, assets/fotos/fachada-hero-735.webp 735w"
+             sizes="(max-width: 880px) 88vw, 42vw"
+             width="735" height="919" fetchpriority="high"
+             alt="Fachada da Matheus Pereira Barbearia, com letreiro em relevo sobre parede clara e vitrine de vidro">
+      </figure>
+    </div>
+  </section>
+
+  <!-- ==================================================================== -->
+  <!-- 02 POSICIONAMENTO                                                    -->
+  <!-- ==================================================================== -->
+  <section class="secao posicionamento">
+    <div class="container posicionamento__grade">
+      <h2>Mais que um corte</h2>
+      <div class="posicionamento__texto">
+        <p class="posicionamento__entrada">
+          Um estilo que representa você.
+        </p>
+        <p class="prosa">
+          Do corte clássico ao visual mais atual, cada atendimento começa
+          entendendo o que você procura — e termina com cada detalhe no lugar.
+        </p>
+        <p class="prosa">
+          Seu estilo não precisa caber em uma categoria. Aqui cabe o degradê,
+          o clássico, o acabamento na navalha e o corte do seu filho.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================================================================== -->
+  <!-- 03 A BARBEARIA                                                       -->
+  <!-- ==================================================================== -->
+  <section class="secao barbearia" id="barbearia">
+    <div class="container barbearia__grade">
+      <figure class="moldura barbearia__figura revelar">
+        <img src="assets/fotos/interior-765.webp"
+             srcset="assets/fotos/interior-480.webp 480w, assets/fotos/interior-765.webp 765w"
+             sizes="(max-width: 880px) 88vw, 40vw"
+             width="765" height="1020" loading="lazy"
+             alt="Sala de espera da barbearia, com sofá de couro marrom, poltronas e piso de madeira clara">
+      </figure>
+
+      <div>
+        <h2>Um espaço feito para você</h2>
+        <p class="prosa">
+          Um ambiente moderno, confortável e organizado, onde dá para esperar
+          sem pressa e sair com a sensação de que valeu a pena ter vindo.
+        </p>
+
+        <ul class="detalhes">
+          <li><span class="rotulo">Ambiente</span><span class="valor">Climatizado, com espaço de espera e café</span></li>
+          <li><span class="rotulo">Atendimento</span><span class="valor">Individual, com hora marcada</span></li>
+          <li><span class="rotulo">Onde</span><span class="valor" data-endereco-curto></span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================================================================== -->
+  <!-- 04 SERVICOS                                                          -->
+  <!-- ==================================================================== -->
+  <section class="secao servicos" id="servicos">
+    <div class="container">
+      <div class="cabecalho-secao">
+        <h2>Escolha como você quer sair daqui</h2>
+      </div>
+
+      <div class="servicos__grade" id="servicos-grade"></div>
+
+      <p class="servicos__nota" id="servicos-nota"></p>
+
+      <div class="servicos__acoes">
+        <a class="btn btn--principal" data-whatsapp href="#">Agendar pelo WhatsApp</a>
+        <a class="link-linha" data-appbarber href="#" target="_blank" rel="noopener">Ver agenda online</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================================================================== -->
+  <!-- 05 GALERIA                                                           -->
+  <!-- ==================================================================== -->
+  <section class="secao galeria" id="galeria">
+    <div class="container">
+      <div class="galeria__topo">
+        <h2>Antes de sair, o espelho precisa convencer</h2>
+        <div class="filtros" id="filtros" role="group" aria-label="Filtrar galeria por tipo de corte"></div>
+      </div>
+
+      <div class="galeria__grade" id="galeria-grade"></div>
+
+      <p class="aviso-provisorio" id="aviso-galeria" hidden></p>
+    </div>
+  </section>
+
+  <!-- ==================================================================== -->
+  <!-- 06 ATENDIMENTO INFANTIL                                              -->
+  <!-- ==================================================================== -->
+  <section class="secao infantil">
+    <div class="container infantil__grade">
+      <div>
+        <h2>Desde o primeiro corte</h2>
+        <p class="prosa">
+          Cada cliente tem seu tempo, seu estilo e sua personalidade. O
+          atendimento é pensado para que até os pequenos se sintam à vontade na
+          cadeira.
+        </p>
+        <p style="margin-top:2rem">
+          <a class="btn btn--contorno" data-whatsapp href="#">Agendar horário</a>
+        </p>
+      </div>
+
+      <div class="infantil__fotos" id="infantil-fotos"></div>
+    </div>
+  </section>
+
+  <!-- ==================================================================== -->
+  <!-- 07 MONOGRAMA -- o momento de assinatura                              -->
+  <!-- ==================================================================== -->
+  <section class="monograma" id="monograma">
+    <svg class="monograma__marca" viewBox="-4 -4 108 128" fill="none" stroke="currentColor"
+         stroke-width="4.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path class="mp-traco" d="M 2 79.7 L 2 1 L 79.6 118"/>
+      <path class="mp-traco" d="M 10.2 118 L 61.15 19 A 19 19 0 1 1 84 44 L 62 46"/>
+    </svg>
+
+    <div class="container">
+      <p class="monograma__palavras" id="monograma-palavras">
+        <span class="monograma__palavra is-ativa">MP</span>
+        <span class="monograma__palavra">Matheus Pereira</span>
+        <span class="monograma__palavra">Barbearia</span>
+      </p>
+      <p class="monograma__legenda">
+        O mesmo símbolo que está na fachada, na porta e no espelho.
+      </p>
+    </div>
+  </section>
+
+  <!-- ==================================================================== -->
+  <!-- 08 O BARBEIRO                                                        -->
+  <!-- ==================================================================== -->
+  <section class="secao barbeiro" id="barbeiro">
+    <div class="container barbeiro__grade">
+      <figure class="moldura barbeiro__figura revelar">
+        <img src="assets/fotos/matheus-768.webp"
+             srcset="assets/fotos/matheus-480.webp 480w, assets/fotos/matheus-768.webp 768w, assets/fotos/matheus-1080.webp 1080w"
+             sizes="(max-width: 880px) 88vw, 34vw"
+             width="1080" height="1080" loading="lazy"
+             alt="Matheus Pereira, barbeiro e fundador da barbearia, em frente à vitrine da loja">
+      </figure>
+
+      <div>
+        <h2>Por trás de cada corte, existe uma história</h2>
+
+        <!--
+          ATENCAO: texto conceitual, escrito para o protótipo.
+          NAO e a historia real do Matheus e nao afirma nenhum fato sobre ele.
+          Substituir pela historia real antes de publicar. Ver README.md.
+        -->
+        <p class="prosa">
+          A Matheus Pereira Barbearia nasceu da vontade de transformar o cuidado
+          masculino em uma experiência mais próxima, personalizada e atual.
+        </p>
+        <p class="prosa" style="margin-top:1.25rem">
+          Quem senta na cadeira é atendido pelo próprio Matheus, do primeiro
+          corte da manhã ao último do dia.
+        </p>
+
+        <div class="barbeiro__assinatura">
+          <p class="barbeiro__nome">Matheus Pereira</p>
+          <p class="barbeiro__papel">Barbeiro e fundador</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================================================================== -->
+  <!-- 09 AVALIACOES                                                        -->
+  <!-- ==================================================================== -->
+  <section class="secao avaliacoes">
+    <div class="container avaliacoes__interno">
+      <div id="avaliacoes-nota"></div>
+      <h2>Quem passa por aqui, percebe</h2>
+      <p class="prosa">
+        A melhor forma de saber como é o atendimento é ler quem já sentou na
+        cadeira.
+      </p>
+      <p class="avaliacoes__acao">
+        <a class="btn btn--contorno" data-google href="#" target="_blank" rel="noopener">
+          Ver avaliações no Google
+        </a>
+      </p>
+    </div>
+  </section>
+
+  <!-- ==================================================================== -->
+  <!-- 10 LOCALIZACAO E HORARIOS                                            -->
+  <!-- ==================================================================== -->
+  <section class="secao local" id="local">
+    <div class="container local__grade">
+      <div>
+        <h2>Você já sabe onde encontrar seu próximo corte</h2>
+        <p class="local__endereco" data-endereco-completo></p>
+        <a class="btn btn--principal" data-maps href="#" target="_blank" rel="noopener">Como chegar</a>
+      </div>
+
+      <div class="local__lado">
+        <h2 class="so-leitor-de-tela">Horários de atendimento</h2>
+        <ul class="horarios" id="horarios"></ul>
+        <p class="horarios__nota">Horários podem sofrer alterações em feriados.</p>
+
+        <figure class="moldura local__figura">
+          <img src="assets/fotos/fachada-hero-480.webp" width="480" height="600" loading="lazy"
+               alt="Fachada da barbearia vista da calçada, na Av. Casemiro Perez">
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================================================================== -->
+  <!-- 11 CTA FINAL                                                         -->
+  <!-- ==================================================================== -->
+  <section class="cta-final">
+    <div class="cta-final__fundo">
+      <img src="assets/placeholder/degrade-01.webp" alt="" aria-hidden="true" loading="lazy" data-provisorio="true">
+    </div>
+
+    <div class="container cta-final__interno">
+      <h2>Seu próximo corte começa aqui</h2>
+      <p class="prosa">Escolha seu serviço e fale direto com o Matheus.</p>
+
+      <div class="cta-final__acoes">
+        <a class="btn btn--claro" data-whatsapp href="#">Agendar pelo WhatsApp</a>
+        <a class="btn btn--contorno-claro" data-appbarber href="#" target="_blank" rel="noopener">Ver agenda online</a>
+      </div>
+
+      <p class="cta-final__endereco" data-endereco-curto></p>
+    </div>
+  </section>
+
+</main>
+
+<!-- ====================================================================== -->
+<!-- RODAPE                                                                 -->
+<!-- ====================================================================== -->
+<footer class="rodape">
+  <div class="container">
+    <div class="rodape__grade">
+      <div class="rodape__marca">
+        <svg viewBox="-4 -4 108 128" fill="none" stroke="currentColor" stroke-width="4.6"
+             stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M 2 79.7 L 2 1 L 79.6 118"/>
+          <path d="M 10.2 118 L 61.15 19 A 19 19 0 1 1 84 44 L 62 46"/>
+        </svg>
+        <p class="rodape__nome">Matheus Pereira<br>Barbearia</p>
+      </div>
+
+      <div>
+        <h3>Contato</h3>
+        <ul>
+          <li><a data-whatsapp href="#">Agendar pelo WhatsApp</a></li>
+          <li><a data-telefone href="#"></a></li>
+          <li><a data-instagram href="#" target="_blank" rel="noopener"></a></li>
+          <li><a data-appbarber href="#" target="_blank" rel="noopener">Agenda online</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3>Onde estamos</h3>
+        <ul>
+          <li data-endereco-linhas></li>
+          <li><a data-maps href="#" target="_blank" rel="noopener">Abrir no Google Maps</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="rodape__base">
+      <p>&copy; <span data-ano></span> Matheus Pereira Barbearia</p>
+      <p>Araraquara — SP</p>
+    </div>
+  </div>
+</footer>
+
+<!-- Barra fixa de agendamento (mobile) -->
+<div class="barra-agendar">
+  <a class="btn btn--principal" data-whatsapp href="#">Agendar horário</a>
+  <a class="btn btn--contorno" data-telefone href="#" aria-label="Ligar para a barbearia">Ligar</a>
+</div>
+
+<noscript>
+  <div class="container" style="padding-block:2rem">
+    <p><strong>Matheus Pereira Barbearia</strong> — Av. Casemiro Perez, 745, Vila Harmonia,
+    Araraquara/SP. Agendamentos pelo telefone (16) 99775-2326. Terça a sexta das 08:00 às 20:30,
+    sábado das 08:00 às 18:00.</p>
+  </div>
+</noscript>
+
+<script src="js/config.js"></script>
+<script src="js/content.js"></script>
+<script src="js/site.js"></script>
+<script src="js/motion.js"></script>
+</body>
+</html>

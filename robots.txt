@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://matheuspereira-barbearia.vercel.app/sitemap.xml
